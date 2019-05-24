@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: enrollment
+    description: "Table with enrollments."
+
+    columns:
+      - name: enrollment_id
+        description: "The enrollment id"
+        tests:
+        - unique
+        - not_null
+        - relationships:
+            to: ref('activity')
+            field: enrollment_id
+
+      - name: user_id
+        tests:
+        - not_null
+
+      - name: enterprise_user_id
+
+      - name: course_id
+
+      - name: enroll_timestamp

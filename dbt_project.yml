@@ -2,12 +2,12 @@
 # Name your package! Package names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'julia_test_pkg'
-version: '1.0'
+name: edx_enterprise_bi
+version: 1.0
 
 # This setting configures which "profile" dbt uses for this project. Profiles contain
 # database connection information, and should be configured in the  ~/.dbt/profiles.yml file
-profile: 'default'
+profile: default
 
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that source models can be found
@@ -20,8 +20,8 @@ macro-paths: ["macros"]
 
 target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
-    - "target"
-    - "dbt_modules"
+  - "target"
+  - "dbt_modules"
 
 # You can define configurations for models in the `source-paths` directory here.
 # Using these configurations, you can enable or disable models, change how they
@@ -31,7 +31,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as views (the default). These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  julia_test_pkg:
-      # Applies to all files under models/example/
-      example:
-          materialized: view
+  edx_enterprise_bi:
+    enrollment:
+      materialized: view
+    activity:
+      materialized: view
