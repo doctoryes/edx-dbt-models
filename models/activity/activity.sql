@@ -7,7 +7,8 @@ with enterprise_users as
 )
 select
   f.user_id, e.enrollment_id, e.enroll_timestamp, u.enterprise_id, u.enterprise_name,
-  f.course_id, f.date, f.cnt_active_activity
+  f.course_id, f.date, f.cnt_active_activity, f.cnt_engaged_activity, f.cnt_video_activity,
+  {{ is_gt_zero('cnt_active_activity') }} as has_active_activity
 from business_intelligence.production.user_activity_engagement_daily f
 --Filter to only activities from enterprise enrollments.
 inner join {{ ref('enrollment') }} e using(user_id, course_id)
