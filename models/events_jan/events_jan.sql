@@ -1,0 +1,26 @@
+SELECT
+    TIMESTAMP,
+    RECEIVED_AT,
+    USER_ID,
+    USERNAME,
+    ANONYMOUS_ID,
+    EVENT_TYPE,
+    COURSE_ID,
+    ORG_ID,
+    LABEL,
+    CATEGORY,
+    EMITTER_TYPE,
+    URL,
+    REFERRER,
+    SOURCE,
+    INPUT_FILE,
+    AGENT_TYPE,
+    AGENT_DEVICE_NAME,
+    AGENT_OS,
+    AGENT_BROWSER,
+    AGENT_TOUCH_CAPABLE,
+    RAW_EVENT_STR,
+    RAW_EVENT,
+    DATE
+FROM events.events.json_event_records
+WHERE received_at BETWEEN '2019-01-01' AND '2019-02-01'

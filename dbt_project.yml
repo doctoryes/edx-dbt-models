@@ -36,3 +36,4 @@ models:
       materialized: view
     activity:
       materialized: view
+  activity_jan:
